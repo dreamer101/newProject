@@ -1,0 +1,38 @@
+@keyframes animatedBackground {
+  from { background-position: 0 0; }
+  to { background-position: 100% 0; }
+}
+body {
+  text-align: center;
+  font-family: verdana;
+}
+
+h1 {
+  color: white;
+  font-size: 32pt;
+
+}
+
+button {
+    font-size: 60px;
+    height: 100px;
+    margin: 4px 2px;
+    vertical-align: top;
+    width: 100px;
+  }
+
+   #playButton {
+    font-size: 16px;
+    height: 50px;
+    width: 316px;
+  }
+
+body background {
+  width: 560px;
+  height: 400px;
+  background-image: url("http://p1.pichost.me/i/56/1797585.jpg");
+  background-position: 0px 0px;
+  background-repeat: repeat-x;
+
+  animation: animatedBackground 40s linear infinite;
+}
