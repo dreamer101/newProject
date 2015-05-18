@@ -17,5 +17,19 @@
   "strict": true,
   "trailing": true,
   "smarttabs": true,
-  "jquery": true
+  "jquery": true,
+  "globals": {
+    "alert": false,
+    "selectTurn": false,
+    "playButton": false,
+    "button1": false,
+    "button2": false,
+    "button3": false,
+    "button4": false,
+    "button5": false,
+    "button6": false,
+    "button7": false,
+    "button8": false,
+    "button9": false
+  }
 }

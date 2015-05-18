@@ -7,7 +7,7 @@ var buttons = [button1, button2, button3,
 var gameover = false;
 
 function checkCombination(b1, b2, b3) {
-  if (b1.innerHTML != '' && b1.innerHTML == b2.innerHTML && b1.innerHTML == b3.innerHTML) {
+  if (b1.innerHTML !== '' && b1.innerHTML === b2.innerHTML && b1.innerHTML === b3.innerHTML) {
     gameover = true;
 
     // action item to animate when winner activated
@@ -15,7 +15,7 @@ function checkCombination(b1, b2, b3) {
     b2.style.backgroundColor = 'limeGreen';
     b3.style.backgroundColor = 'limeGreen';
     // add toggle and modal popup to determine winner
-    alert("I bet you thought you would win");
+    alert('YOU WIN!!!!');
   }
 }
 
@@ -32,20 +32,23 @@ function checkWin() {
 }
 
 function pickSquare() {
-  if (gameover || this.innerHTML != '') return;
+  /*jshint validthis: true */
+  if (gameover || this.innerHTML !== '') {
+    return;
+  }
 
   this.innerHTML = selectTurn.value;
-
-  if (selectTurn.value == 'X') {
+//allows the square to identify whose turn it is, with if/else
+  if (selectTurn.value === 'X') {
     selectTurn.value = 'O';
-  } else{
+  } else {
     selectTurn.value = 'X';
   }
 
   checkWin();
 }
 
-//
+//once game has been won, reset board and player moves.
 function resetGame() {
   for (var i = 0; i < buttons.length; i++) {
     buttons[i].style.backgroundColor = '';
@@ -53,7 +56,7 @@ function resetGame() {
   }
   gameover = false;
 }
-
+//in this for loop, disable click function so no more player moves are allowed
 for (var i = 0; i < buttons.length; i++) {
   buttons[i].onclick = pickSquare;
 }
