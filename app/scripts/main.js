@@ -48,7 +48,7 @@ function pickSquare() {
   checkWin();
 }
 
-//once game has been won, reset board and player moves.
+//after every game has been won, reset backgroundColor and player moves to default
 function resetGame() {
   for (var i = 0; i < buttons.length; i++) {
     buttons[i].style.backgroundColor = '';
@@ -56,7 +56,7 @@ function resetGame() {
   }
   gameover = false;
 }
-//in this for loop, disable click function so no more player moves are allowed
+//for this loop, disable click function so no more player moves are allowed
 for (var i = 0; i < buttons.length; i++) {
   buttons[i].onclick = pickSquare;
 }
